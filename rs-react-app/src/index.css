@@ -1,12 +1,33 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Spotify Brand Colors */
+  --spotify-green: #1db954;
+  --spotify-green-light: #1ed760;
+  --spotify-green-dark: #1aa34a;
+
+  /* App Theme Colors */
+  --gold: #d4af37;
+  --dark-text: #2c3e50;
+  --light-text: #6c757d;
+  --white: #ffffff;
+  --light-bg: #f8f9fa;
+
+  /* Background & Overlay Colors */
+  --overlay-light: rgba(255, 255, 255, 0.9);
+  --overlay-medium: rgba(255, 255, 255, 0.7);
+  --overlay-soft: rgba(255, 255, 255, 0.4);
+  --overlay-blur: rgba(248, 249, 250, 0.85);
+
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+
+  font-family:
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--dark-text);
+  background-color: var(--light-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,10 +45,22 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('./assets/images/bg-image.jpg') center/cover no-repeat;
+  filter: blur(3px) brightness(0.8);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
 h1 {

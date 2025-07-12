@@ -1,42 +1,83 @@
-#root {
-  max-width: 1280px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 85vh;
+  margin-top: 3vh;
+  padding: 0 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-card {
+  display: flex;
+  flex-direction: column;
+  background: url('./assets/images/music-board-big.jpg') center/cover;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border: 3px solid #d4af37;
+  min-height: 700px;
+  width: 100%;
+  max-width: 1400px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+    margin-top: 2vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-card {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 600px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 570px) {
+  .main-content {
+    padding: 0.5rem;
+    margin-top: 1vh;
+  }
+
+  .main-card {
+    min-height: 500px;
+    border-radius: 20px;
   }
 }
 
-.card {
-  padding: 2em;
+@media (max-width: 400px) {
+  .main-content {
+    padding: 0.3rem;
+  }
+
+  .main-card {
+    min-height: 450px;
+    border-radius: 15px;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+/* Smooth transitions for better UX */
+* {
+  transition: all 0.3s ease;
 }
