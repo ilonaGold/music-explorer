@@ -1,25 +1,19 @@
 import { Component } from 'react';
+import type { SpotifyTrack } from '../services/spotifyApi';
+import TrackResult from './TrackResult';
 import './ResultsSection.css';
 
-interface ResultsSectionState {
+interface ResultsSectionProps {
   isLoading: boolean;
-  hasResults: boolean;
+  tracks: SpotifyTrack[];
+  error: string | null;
+  searchTerm: string;
 }
 
-class ResultsSection extends Component<
-  Record<string, never>,
-  ResultsSectionState
-> {
-  constructor(props: Record<string, never>) {
-    super(props);
-    this.state = {
-      isLoading: false,
-      hasResults: false,
-    };
-  }
-
+class ResultsSection extends Component<ResultsSectionProps> {
   render() {
-    const { isLoading, hasResults } = this.state;
+    const { isLoading, tracks, error, searchTerm } = this.props;
+    const hasResults = tracks.length > 0;
 
     return (
       <section className="results-section">
@@ -31,7 +25,14 @@ class ResultsSection extends Component<
           />
         </div>
         <div className="results-container">
-          {isLoading ? (
+          {error ? (
+            <div className="error-state">
+              <p className="error-text">❌ {error}</p>
+              <p className="error-subtext">
+                Please try again with a different search term.
+              </p>
+            </div>
+          ) : isLoading ? (
             <div className="loading-state">
               <div className="vinyl-loader">
                 <img
@@ -40,12 +41,21 @@ class ResultsSection extends Component<
                   className="spinning-vinyl"
                 />
               </div>
-              <p className="loading-text">Searching for music...</p>
+              <p className="loading-text">Searching for "{searchTerm}"...</p>
             </div>
           ) : hasResults ? (
             <div className="results-list">
-              {/* TODO: Implement results display */}
-              <p>Results will appear here...</p>
+              <div className="results-header">
+                <h3 className="results-title">
+                  Found {tracks.length} track{tracks.length !== 1 ? 's' : ''}{' '}
+                  for "{searchTerm}"
+                </h3>
+              </div>
+              <div className="tracks-container">
+                {tracks.map((track) => (
+                  <TrackResult key={track.id} track={track} />
+                ))}
+              </div>
             </div>
           ) : (
             <div className="welcome-state">
