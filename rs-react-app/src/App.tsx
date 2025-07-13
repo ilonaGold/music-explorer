@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import type { SpotifyTrack } from './services/spotifyApi';
 import { spotifyApi } from './services/spotifyApi';
-import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/Header';
 import SearchSection from './components/SearchSection';
 import ResultsSection from './components/ResultsSection';
@@ -12,6 +11,7 @@ interface AppState {
   tracks: SpotifyTrack[];
   error: string | null;
   searchTerm: string;
+  shouldThrowError: boolean;
 }
 
 class App extends Component<Record<string, never>, AppState> {
@@ -23,6 +23,7 @@ class App extends Component<Record<string, never>, AppState> {
       tracks: [],
       error: null,
       searchTerm: '',
+      shouldThrowError: false,
     };
   }
 
@@ -52,28 +53,40 @@ class App extends Component<Record<string, never>, AppState> {
   };
 
   render() {
-    const { isLoading, tracks, error, searchTerm } = this.state;
+    const { isLoading, tracks, error, searchTerm, shouldThrowError } =
+      this.state;
+
+    // Throw error during render cycle so ErrorBoundary can catch it
+    if (shouldThrowError) {
+      throw new Error(
+        'Test ErrorBoundary - This is a deliberate error for testing purposes'
+      );
+    }
 
     return (
-      <ErrorBoundary>
-        <div className="app">
-          <Header />
-          <main className="main-content">
-            <div className="main-card">
-              <SearchSection
-                onSearch={this.handleSearch}
-                isLoading={isLoading}
-              />
-              <ResultsSection
-                isLoading={isLoading}
-                tracks={tracks}
-                error={error}
-                searchTerm={searchTerm}
-              />
-            </div>
-          </main>
-        </div>
-      </ErrorBoundary>
+      <div className="app">
+        <Header />
+        <main className="main-content">
+          <div className="main-card">
+            <SearchSection onSearch={this.handleSearch} isLoading={isLoading} />
+            <ResultsSection
+              isLoading={isLoading}
+              tracks={tracks}
+              error={error}
+              searchTerm={searchTerm}
+            />
+          </div>
+        </main>
+        <button
+          className="error-test-button"
+          onClick={() => {
+            this.setState({ shouldThrowError: true });
+          }}
+          title="Click to test ErrorBoundary"
+        >
+          🚨 Error Button
+        </button>
+      </div>
     );
   }
 }

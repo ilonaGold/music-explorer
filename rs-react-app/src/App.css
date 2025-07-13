@@ -32,12 +32,70 @@
   background: url('./assets/images/music-board-big.jpg') center/cover;
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  border: 3px solid #d4af37;
+  border: 3px solid var(--gold);
   min-height: 700px;
   width: 100%;
   max-width: 1400px;
   overflow: hidden;
   position: relative;
+}
+
+/* Error test button for ErrorBoundary testing */
+.error-test-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(
+    135deg,
+    var(--error-red) 0%,
+    var(--error-red-light) 100%
+  );
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error-test-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 77, 79, 0.4);
+  background: linear-gradient(
+    135deg,
+    var(--error-red-light) 0%,
+    var(--error-red) 100%
+  );
+}
+
+.error-test-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 77, 79, 0.3);
+}
+
+/* Responsive adjustments for error button */
+@media (max-width: 768px) {
+  .error-test-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-test-button {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+  }
 }
 
 /* Responsive Design */
