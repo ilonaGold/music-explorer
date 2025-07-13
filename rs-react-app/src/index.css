@@ -11,6 +11,11 @@
   --white: #ffffff;
   --light-bg: #f8f9fa;
 
+  /* Error/Alert Colors */
+  --error-red: #ff4d4f;
+  --error-red-light: #ff7875;
+  --error-text: #e74c3c;
+
   /* Background & Overlay Colors */
   --overlay-light: rgba(255, 255, 255, 0.9);
   --overlay-medium: rgba(255, 255, 255, 0.7);

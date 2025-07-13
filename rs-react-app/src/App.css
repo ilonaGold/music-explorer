@@ -79,25 +79,6 @@
   box-shadow: 0 2px 8px rgba(255, 77, 79, 0.3);
 }
 
-/* Responsive adjustments for error button */
-@media (max-width: 768px) {
-  .error-test-button {
-    bottom: 15px;
-    right: 15px;
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .error-test-button {
-    bottom: 10px;
-    right: 10px;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.7rem;
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
@@ -110,6 +91,13 @@
     max-width: 100%;
     min-height: 600px;
   }
+
+  .error-test-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 570px) {
@@ -121,6 +109,13 @@
   .main-card {
     min-height: 500px;
     border-radius: 20px;
+  }
+
+  .error-test-button {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
   }
 }
 

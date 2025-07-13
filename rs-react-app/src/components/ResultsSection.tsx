@@ -41,14 +41,16 @@ class ResultsSection extends Component<ResultsSectionProps> {
                   className="spinning-vinyl"
                 />
               </div>
-              <p className="loading-text">Searching for "{searchTerm}"...</p>
+              <p className="loading-text">
+                Searching for &quot;{searchTerm}&quot;...
+              </p>
             </div>
           ) : hasResults ? (
             <div className="results-list">
               <div className="results-header">
                 <h3 className="results-title">
                   Found {tracks.length} track{tracks.length !== 1 ? 's' : ''}{' '}
-                  for "{searchTerm}"
+                  for &quot;{searchTerm}&quot;
                 </h3>
               </div>
               <div className="tracks-container">

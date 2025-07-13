@@ -82,9 +82,9 @@ class App extends Component<Record<string, never>, AppState> {
           onClick={() => {
             this.setState({ shouldThrowError: true });
           }}
-          title="Click to test ErrorBoundary"
+          title="Click to test ErrorBoundary functionality"
         >
-          🚨 Error Button
+          🚨 Test Error Boundary
         </button>
       </div>
     );
