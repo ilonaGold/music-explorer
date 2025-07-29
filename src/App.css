@@ -20,8 +20,7 @@
   justify-content: center;
   width: 100%;
   max-width: 1400px;
-  margin-top: 3vh;
-  padding: 0 2rem;
+  padding: 1.5rem;
 }
 
 .main-card {
@@ -42,8 +41,8 @@
 /* Error test button for ErrorBoundary testing */
 .error-test-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   z-index: 9999;
   padding: 0.8rem 1.2rem;
   background: linear-gradient(
@@ -88,7 +87,6 @@
   .main-card {
     flex-direction: column;
     max-width: 100%;
-    min-height: 600px;
   }
 
   .error-test-button {
@@ -106,7 +104,6 @@
   }
 
   .main-card {
-    min-height: 500px;
     border-radius: 20px;
   }
 
@@ -124,7 +121,6 @@
   }
 
   .main-card {
-    min-height: 450px;
     border-radius: 15px;
   }
 }

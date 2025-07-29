@@ -1,6 +1,5 @@
 .results-section {
-  flex: 1;
-  padding: 3rem;
+  padding: 1rem;
   background: var(--overlay-light);
   border-radius: 0 0 25px 25px;
   display: flex;
@@ -13,9 +12,9 @@
 
 .spotify-header {
   text-align: center;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 1rem;
   border-bottom: 2px solid var(--gold);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 2;
   background: var(--overlay-soft);
@@ -29,13 +28,13 @@
 }
 
 .results-container {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   z-index: 2;
+  padding: 0.5rem;
 }
 
 /* Welcome State */
@@ -44,9 +43,9 @@
 }
 
 .cat-mascot {
-  max-width: 300px;
+  max-width: 270px;
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
