@@ -59,7 +59,7 @@ class App extends Component<Record<string, never>, AppState> {
     // Throw error during render cycle so ErrorBoundary can catch it
     if (shouldThrowError) {
       throw new Error(
-        'Test ErrorBoundary - This is a deliberate error for testing purposes'
+        'Test Error - This is a deliberate error for testing purposes'
       );
     }
 
@@ -84,7 +84,7 @@ class App extends Component<Record<string, never>, AppState> {
           }}
           title="Click to test ErrorBoundary functionality"
         >
-          🚨 Test Error Boundary
+          🚨 Test Errors
         </button>
       </div>
     );

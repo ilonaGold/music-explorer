@@ -3,6 +3,11 @@ import type { SpotifyTrack } from '../services/spotifyApi';
 import TrackResult from './TrackResult';
 import './ResultsSection.css';
 
+// Import images to ensure they're bundled correctly
+import spotifyLogo from '/images/full-logo-framed.svg';
+import vinylLoader from '/images/disk1.png';
+import catMascot from '/images/cat-big.png';
+
 interface ResultsSectionProps {
   isLoading: boolean;
   tracks: SpotifyTrack[];
@@ -18,11 +23,7 @@ class ResultsSection extends Component<ResultsSectionProps> {
     return (
       <section className="results-section">
         <div className="spotify-header">
-          <img
-            src="/src/assets/images/full-logo-framed.svg"
-            alt="Spotify Logo"
-            className="spotify-logo"
-          />
+          <img src={spotifyLogo} alt="Spotify Logo" className="spotify-logo" />
         </div>
         <div className="results-container">
           {error ? (
@@ -36,7 +37,7 @@ class ResultsSection extends Component<ResultsSectionProps> {
             <div className="loading-state">
               <div className="vinyl-loader">
                 <img
-                  src="/src/assets/images/disk1.png"
+                  src={vinylLoader}
                   alt="Loading..."
                   className="spinning-vinyl"
                 />
@@ -62,7 +63,7 @@ class ResultsSection extends Component<ResultsSectionProps> {
           ) : (
             <div className="welcome-state">
               <img
-                src="/src/assets/images/cat-big.png"
+                src={catMascot}
                 alt="Cat mascot listening to music"
                 className="cat-mascot"
               />

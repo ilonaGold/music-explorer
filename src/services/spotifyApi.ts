@@ -41,6 +41,12 @@ class SpotifyApiService {
     // These should be environment variables in production
     this.clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID || '';
     this.clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET || '';
+
+    if (!this.clientId || !this.clientSecret) {
+      console.error(
+        'Spotify API credentials are missing. Please set VITE_SPOTIFY_CLIENT_ID and VITE_SPOTIFY_CLIENT_SECRET environment variables.'
+      );
+    }
   }
 
   /**
@@ -80,7 +86,7 @@ class SpotifyApiService {
       return this.accessToken;
     } catch (error) {
       console.error('Failed to get Spotify access token:', error);
-      throw new Error('Unable to authenticate with Spotify API');
+      throw new Error('Unable to search for tracks. Please try again.');
     }
   }
 
@@ -93,6 +99,10 @@ class SpotifyApiService {
   ): Promise<SpotifyTrack[]> {
     if (!query.trim()) {
       throw new Error('Search query cannot be empty');
+    }
+
+    if (!this.clientId || !this.clientSecret) {
+      throw new Error('Unable to search for tracks. Please try again.');
     }
 
     try {

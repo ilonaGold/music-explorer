@@ -14,7 +14,7 @@ A beautiful, responsive music search application built with React class componen
 
 ## 🚀 Live Demo
 
-[View Live Application](https://your-username.github.io/rss-solo-react-app/)
+[View Live Application](https://ilonagold.github.io/music-explorer/)
 
 ## 📱 Screenshots
 
@@ -113,7 +113,6 @@ rs-react-app/
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
-├── .env.example
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
@@ -135,6 +134,18 @@ rs-react-app/
 VITE_SPOTIFY_CLIENT_ID=your_client_id_here
 VITE_SPOTIFY_CLIENT_SECRET=your_client_secret_here
 ```
+
+### Deployment Setup
+
+For GitHub Pages deployment:
+
+1. **Deploy to GitHub Pages**:
+   ```bash
+   npm run build
+   npm run deploy
+   ```
+
+The app will be available at `https://yourusername.github.io/music-explorer/`
 
 ## 🎨 Design Features
 
