@@ -7,7 +7,6 @@
   background: var(--overlay-light);
   position: relative;
   border-radius: 25px 25px 0 0;
-  min-height: 200px;
   border: 3px solid var(--gold);
   border-bottom: none;
   z-index: 2;
@@ -93,7 +92,6 @@
 @media (max-width: 768px) {
   .search-section {
     padding: 1.5rem;
-    min-height: 180px;
   }
 
   .search-container {
@@ -110,7 +108,6 @@
 @media (max-width: 540px) {
   .search-section {
     padding: 1rem;
-    min-height: 140px; /* More compact for mobile */
   }
 
   .search-container {
@@ -143,7 +140,6 @@
 @media (max-width: 360px) {
   .search-section {
     padding: 0.8rem;
-    min-height: 120px; /* Even more compact on very small screens */
   }
 
   .search-container {
