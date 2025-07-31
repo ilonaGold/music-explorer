@@ -18,9 +18,8 @@ A beautiful, responsive music search application built with React class componen
 
 ## 📱 Screenshots
 
-![Desktop View](./screenshots/desktop-view.png)
-![Mobile View](./screenshots/mobile-view.png)
-![Error Boundary](./screenshots/error-boundary.png)
+![Initial State](https://github.com/ilonaGold/hosted-assets/blob/main/music-explorer-initial.png)
+![Search Results](https://github.com/ilonaGold/hosted-assets/blob/main/music-explorer-results.png)
 
 ## 🛠️ Technology Stack
 
@@ -81,44 +80,6 @@ A beautiful, responsive music search application built with React class componen
 
 - `npm run format:fix` - Format code with Prettier
 
-## 🎯 RS School Requirements
-
-This project implements all required features for the React course:
-
-- ✅ **Class Components** (No functional components or hooks)
-- ✅ **API Integration** (Spotify Web API with proper error handling)
-- ✅ **LocalStorage** (Search persistence)
-- ✅ **Error Boundaries** (Comprehensive error handling)
-- ✅ **TypeScript** (Full type safety)
-- ✅ **Responsive Design** (Mobile-first approach)
-- ✅ **Code Quality** (ESLint, Prettier, Husky)
-
-## 📁 Project Structure
-
-```
-rs-react-app/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── components/
-│   │   ├── ErrorBoundary.tsx
-│   │   ├── Header.tsx
-│   │   ├── ResultsSection.tsx
-│   │   ├── SearchSection.tsx
-│   │   └── TrackResult.tsx
-│   ├── services/
-│   │   └── spotifyApi.ts
-│   ├── assets/
-│   │   └── images/
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
 ## 🔧 Configuration
 
 ### Spotify API Setup
@@ -165,7 +126,7 @@ The app will be available at `https://yourusername.github.io/music-explorer/`
 
 ## 🧪 Testing
 
-- **Error Boundary Test** - Click the "🚨 Error Button" to test error handling
+- **Error Boundary Test** - Click the "🚨 Test Errors" to test error handling
 - **API Testing** - Search functionality with real Spotify data
 - **Responsive Testing** - Test on different screen sizes
 
@@ -176,26 +137,12 @@ The app will be available at `https://yourusername.github.io/music-explorer/`
 - **Bundle Optimization** - Vite's built-in optimizations
 - **Lazy Loading** - Efficient component rendering
 
-## 🤝 Contributing
-
-This is an educational project for RS School. For suggestions or improvements:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📜 License
-
-This project is created for educational purposes as part of RS School curriculum.
-
 ## 🙏 Acknowledgments
 
-- **RS School** - For the excellent React course
 - **Spotify** - For the comprehensive Web API
 - **React Team** - For the amazing framework
 - **TypeScript Team** - For type safety
 
 ---
 
-**Built with ❤️ for RS School React Course**
+**Built with ❤️ for web development, design and music**
