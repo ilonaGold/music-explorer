@@ -3,10 +3,10 @@ import type { SpotifyTrack } from '../services/spotifyApi';
 import TrackResult from './TrackResult';
 import './ResultsSection.css';
 
-// Import images to ensure they're bundled correctly
+// Import images
 import spotifyLogo from '/images/full-logo-framed.svg';
 import vinylLoader from '/images/disk1.png';
-import catMascot from '/images/cat-big.png';
+import catMascot from '/images/cat-mascot.png';
 
 interface ResultsSectionProps {
   isLoading: boolean;

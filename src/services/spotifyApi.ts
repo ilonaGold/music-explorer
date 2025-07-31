@@ -38,7 +38,6 @@ class SpotifyApiService {
   private tokenExpiresAt: number = 0;
 
   constructor() {
-    // These should be environment variables in production
     this.clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID || '';
     this.clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET || '';
 
@@ -49,11 +48,8 @@ class SpotifyApiService {
     }
   }
 
-  /**
-   * Get access token using Client Credentials Flow
-   */
+  // Get access token using Client Credentials Flow
   private async getAccessToken(): Promise<string> {
-    // Return cached token if still valid
     if (this.accessToken && Date.now() < this.tokenExpiresAt) {
       return this.accessToken;
     }
@@ -90,9 +86,6 @@ class SpotifyApiService {
     }
   }
 
-  /**
-   * Search for tracks using Spotify Web API
-   */
   async searchTracks(
     query: string,
     limit: number = 20
@@ -135,25 +128,15 @@ class SpotifyApiService {
     }
   }
 
-  /**
-   * Format track duration from milliseconds to MM:SS
-   */
   formatDuration(durationMs: number): string {
     const minutes = Math.floor(durationMs / 60000);
     const seconds = Math.floor((durationMs % 60000) / 1000);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   }
 
-  /**
-   * Get the best quality image from album images array
-   */
   getBestImageUrl(images: SpotifyTrack['album']['images']): string | null {
     if (!images || images.length === 0) return null;
-
-    // Sort by size and return the medium sized image (around 300px)
     const sortedImages = images.sort((a, b) => b.width - a.width);
-
-    // Prefer medium size (around 300px) or fall back to largest
     const mediumImage = sortedImages.find(
       (img) => img.width >= 250 && img.width <= 400
     );
@@ -161,5 +144,4 @@ class SpotifyApiService {
   }
 }
 
-// Export singleton instance
 export const spotifyApi = new SpotifyApiService();
